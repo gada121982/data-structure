@@ -2,7 +2,7 @@ namespace mySet {
 
     class MySet {
 
-        private collection: Array<number>;
+        private collection: Array<any>;
 
         constructor() {
             this.collection = [];
@@ -12,7 +12,7 @@ namespace mySet {
          * 
          * @param element whether MySet contains value element
          */
-        has(value: number) {
+        has(value: any): Boolean {
             return this.collection.indexOf(value) === -1 ? false : true;
         }
 
@@ -20,7 +20,7 @@ namespace mySet {
          * 
          * @param value push value to MySet unless value not exists  
          */
-        add(value) {
+        add(value: any): Boolean {
             if (!this.has(value)) {
                 this.collection.push(value);
                 return true;
@@ -32,7 +32,7 @@ namespace mySet {
          * 
          * @param value remmove value if exists
          */
-        remove(value) {
+        remove(value: any): Boolean {
             if (this.has(value)) {
 
                 let index = this.collection.indexOf(value);
@@ -43,11 +43,11 @@ namespace mySet {
             return false;
         }
 
-        size() {
+        size(): number {
             return this.collection.length;
         }
 
-        value() {
+        value(): Array<any> {
             return this.collection;
         }
     }
